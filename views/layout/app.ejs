@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <%- partial('../components/header') %>
+    <%- stylesheets %>
+
+</head>
+<body>
+<!-- Begin page -->
+<div id="wrapper">
+    <%- partial('../components/navbar') %>
+    <%- partial('../components/leftbar') %>
+    <div class="content-page">
+        <div class="content">
+            <div class="container-fluid">
+                <%- body -%>
+            </div>
+        </div>
+        <%- partial('../components/footer') %>
+    </div>
+    <div class="rightbar-overlay">
+        <div class="el-relative-full">
+            <img class="el-center" src="<%= baseURL %>assets/images/loading.gif"/>
+        </div>
+    </div>
+</div>
+<%- partial('../components/common-script') %>
+
+<%- scripts %>
+</body>
+</html>
+

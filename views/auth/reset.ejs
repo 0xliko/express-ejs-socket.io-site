@@ -1,0 +1,29 @@
+<%- components('../components/header.ejs') %>
+
+</head>
+
+<body>
+    <%- components('../components/navigation.ejs') %>
+    <main class="myContainer">
+        <% if (errorMessage) { %>
+        <div class="myFlashMessage myFlashMessageError">
+            <%= errorMessage %>
+        </div>
+        <% } %>
+        <div class="myCentered">
+            <form action="/reset" method="POST">
+                <div class="myForm">
+                    <div class="myFormItem">
+                        <label for="email">البريد الالكتروني</label>
+                        <input type="email" name="email" id="email">
+                    </div>                    
+                </div>
+                <div class="myCentered">
+                    <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+                    <button class="myButton" type="submit">Reset Password</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <%- components('../components/common-script.ejs') %>

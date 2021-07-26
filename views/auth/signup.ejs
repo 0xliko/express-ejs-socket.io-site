@@ -1,0 +1,66 @@
+<%- components('../components/header.ejs') %>
+
+</head>
+
+<body class="authentication">
+
+		<!-- Container start -->
+		<div class="container">
+
+				<!-- Row start -->
+				<div class="row justify-content-md-center">
+					<div class="col-xl-4 col-lg-5 col-md-5 col-sm-6 col-12">
+
+						<!-- Login screen start -->
+						<div class="login-screen">
+							<div class="login-box">
+								<a href="#" class="login-logo">
+									<img src="<%-baseURL%>img/logo-dark.png" alt="Bluemoon Admin Dashboard" />
+								</a>
+								<h5>Welcome back,<br />Please Login to your Account.</h5>
+
+								<form action="/sign-up" method="POST">
+                                    <div class="myForm">
+                                        <div class="form-group">
+                                            <input
+                                            type="email" class="form-control <%= validationErrors.find(e => e.param === 'email') ? 'invalid' : '' %>" placeholder="Email Address" name="email" id="email" value="<%= oldInput.email %>"
+                                            />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="password" class="form-control <%= validationErrors.find(e => e.param === 'password') ? 'invalid' : '' %>" placeholder="Password" name="password" id="password" value="<%= oldInput.password %>"/>
+                                        </div>
+                                        <div>
+                                            <input type="password" class="form-control <%= validationErrors.find(e => e.param === 'confirmPassword') ? 'invalid' : '' %>" placeholder="Conform Password" name="confirmPassword" id="confirmPassword" value="<%= oldInput.confirmPassword %>">
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <% if (errorMessage) { %>
+                                            <div class="myFlashMessage myFlashMessageError">
+                                                <p style="color:red"><%= errorMessage %></p>
+                                            </div>
+                                    <% } %>
+                                    <div class="actions mb-4">
+                                        <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+                                    	<button type="submit" class="btn btn-danger">Sign Up</button>
+                                    </div>
+                                    <hr>
+                                    <div class="actions align-left">
+                                    	<span class="additional-link">To Login Page? <a href="<%-baseURL%>">Click here!</a></span>
+                                    </div>
+                                </form>
+
+							</div>
+						</div>
+						<!-- Logi screen end -->
+
+					</div>
+				</div>
+				<!-- Row end -->
+
+
+			<!-- Form end -->
+
+		</div>
+		<!-- Container end -->
+
+	</body>

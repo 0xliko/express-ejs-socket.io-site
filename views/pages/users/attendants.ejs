@@ -1,0 +1,27 @@
+<% layout('../../layout/app') -%>
+<% include ../../components/table-style -%>
+<% include ../../components/table-script -%>
+<% script(baseURL+"assets/libs/custombox/custombox.min.js") %>
+<% script(baseURL+"pages/js/attendants.js") %>
+
+<div class="row">
+    <div class="col-12">
+        <div class="card mt-lg-5">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-12 mb-2">
+                        <a href="#edit-modal" class="btn btn-outline-primary btn-add waves-effect waves-light">إضافة أسماء جديده</a>
+                        <button class="btn btn-outline-success btn-import waves-effect waves-light"><i class="far fa-file-excel mr-2"></i>استيراد اسماء</button>
+                        <button class="btn btn-outline-danger btn-to-not waves-effect waves-light">حذف الكل</button>
+                    </div>
+                </div>
+                <div class="table-container">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<% include ./attendant-edit %>

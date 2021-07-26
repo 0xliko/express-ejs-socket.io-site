@@ -1,0 +1,88 @@
+<div class="modal fade" id="edit-modal" tabindex="-1" role="dialog" aria-labelledby="myCenterModalLabel"
+     aria-hidden="true"
+     style="display: none;">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modal-title">Center modal</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            </div>
+            <div class="modal-body">
+                <form class="form">
+                    <input type="hidden" name="_id"/>
+                    <div class="row">
+                        <div class="col-md-6 col-xs-12">
+                            <div class="form-group">
+                                <label for="no">رقم</label>
+                                <input type="number" class="form-control" id="no" name="no" placeholder="أدخل التسلسل"
+                                       required>
+
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xs-12">
+                            <div class="form-group">
+                                <label for="constraint">القيد</label>
+                                <input type="text" class="form-control" id="constraint" name="constraint" placeholder="أدخل القيد"
+                                       required>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+
+                        <div class="col-md-6 col-xs-12">
+                            <div class="form-group">
+                                <label for="birthday">تاريخ الميلاد</label>
+                                <input type="text" class="form-control" id="birthday" name="birthday"
+                                       placeholder="yyyy/mm/dd" data-provide="datepicker" data-date-autoclose="true" data-date-format="yyyy/mm/dd" placeholder="Enter birthday" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xs-12">
+                            <div class="form-group">
+                                <label for="thigh">فخذ</label>
+                                <input type="text" class="form-control" id="thigh" name="thigh" placeholder="الفخذ الداخلية"
+                                       required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-xs-12">
+                            <div class="form-group">
+                                <label for="name">اسم</label>
+                                <input type="text" class="form-control" id="name" name="name" placeholder="أدخل الاسم"
+                                       required>
+
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xs-12">
+                            <div class="form-group">
+                                <label for="reg_num">رقم القيد</label>
+                                <input type="number" class="form-control" id="reg_num" name="reg_num" placeholder="أدخلرقم القيد"
+                                       required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+
+                        <div class="col-md-6 col-xs-12">
+                            <div class="form-group">
+                                <label for="uid">رقم القيد</label>
+                                <input type="number" class="form-control" id="uid" name="uid" placeholder="أدخل الرقم الموحد "
+                                       required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <button class="btn btn-primary btn-save">حفظ</button>
+                            <button type="button" class="btn btn-light" data-dismiss="modal">أغلق</button>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

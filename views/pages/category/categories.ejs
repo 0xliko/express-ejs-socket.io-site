@@ -1,0 +1,26 @@
+<% layout('../../layout/app') -%>
+<% include ../../components/table-style -%>
+<% include ../../components/table-script -%>
+<% script(baseURL+"assets/libs/custombox/custombox.min.js") %>
+<% script(baseURL+"pages/js/category.js") %>
+
+<div class="row">
+    <div class="col-12">
+        <div class="card mt-lg-5">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-12 mb-2">
+                        <a href="#edit-modal" class="btn btn-outline-primary btn-add waves-effect waves-light">فئة جديدة</a>
+
+                    </div>
+                </div>
+                <div class="table-container">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<% include ./category-edit %>

@@ -1,0 +1,98 @@
+<% layout('../../layout/app') -%>
+<% script(baseURL + "assets/libs/morris-js/morris.min.js") %>
+<% script(baseURL + "assets/libs/raphael/raphael.min.js") %>
+<% script(baseURL + "pages/js/socket.io.js") %>
+<% script(baseURL + "pages/js/dashboard.js?v=2") %>
+<% stylesheet(baseURL + "pages/css/dashboard.css?v=2") %>
+
+<div class="row">
+    <div class="col-12">
+        <div class="card mt-lg-5">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-2 mb-2">
+                        <select class="form-control mode">
+                            <option value="1">الكلي</option>
+                            <option value="2">التاريخ</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row" style="direction: ltr">
+                    <div class="col-md-6" style="direction: rtl">
+
+                        <div class="main-item">
+
+                            <h2 class="text-center text-default">إجمالي الرسم البياني</h2>
+
+                            <div class="text-right attendant-info">
+                                <ul class="list-inline chart-detail-list">
+
+                                    <li class="list-inline-item">
+                                        <h6 class="text-green"><strong class="attend-count">0</strong> حضر</h6>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <h6 class="text-red"><strong class="not-count">0</strong> لم يحضر
+                                        </h6>
+                                    </li>
+                                </ul>
+                            </div>
+
+
+                            <div class="main-chart">
+
+                            </div>
+                            <li class="list-inline-item text-center">
+                                <h6 class="text-info"><strong class="total-count">0</strong> المجموع
+                                </h6>
+                            </li>
+
+                        </div>
+
+                    </div>
+                    <div class="col-md-6" style="direction: rtl">
+
+                        <div class="category-list">
+                            <% for(var i = 0 ; i < categories.length ; i++){
+                                var category = categories[i];
+                            if(category.name == "الحسيني"){
+                            %>
+                                <div class="category-item" categoryFor="<%= category.name %>">
+                                    <h2 class="text-center text-default">[<%= category.name %>] تصنيف </h2>
+                                    <div class="text-right attendant-info">
+                                        <ul class="list-inline chart-detail-list">
+
+                                            <li class="list-inline-item">
+                                                <h6 class="text-green"><strong class="attend-count">0</strong> حضر
+                                                </h6>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <h6 class="text-red"><strong class="not-count">0</strong> لم
+                                                    يحضر</h6>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="category-chart" categoryFor="<%= category.name %>">
+
+                                    </div>
+                                    <li class="list-inline-item text-center">
+                                        <h6 class="text-info"><strong class="total-count">0</strong> المجموع
+
+                                        </h6>
+                                    </li>
+
+                                </div>
+                            <% }}if(!categories.length) { %>
+                                <h4 class="text-center text-info">There are no categories</h4>
+
+                            <% } %>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

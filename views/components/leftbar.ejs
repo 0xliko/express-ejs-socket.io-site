@@ -1,0 +1,49 @@
+<!-- ========== Left Sidebar Start ========== -->
+<div class="left-side-menu">
+
+    <div class="slimscroll-menu">
+
+        <!--- Sidemenu -->
+        <div id="sidebar-menu">
+
+            <ul class="metismenu" id="side-menu">
+
+                <% for (var i = 0; i < menus.length; i++) { %>
+                    <li>
+                        <a href="<%= menus[i].url == "#" ? "#" : baseURL + menus[i].url %>">
+                            <i class="<%= menus[i].icon %>"></i>
+                            <span> <%= menus[i].name %> </span>
+                            <% if(menus[i].items){ %>
+                                <span class="menu-arrow"></span>
+                            <% } %>
+                        </a>
+                        <% if(menus[i].items){
+                            var items = menus[i].items;
+                        %>
+                        <ul class="nav-second-level" aria-expanded="false">
+                            <% for (var j = 0; j < items.length; j++) { %>
+                                <li><a href="<%= baseURL %><%= items[j].url %>"><%= items[j].name %></a></li>
+
+                            <% } %>
+                        </ul>
+                        <% } %>
+                    </li>
+                <% } %>
+
+            </ul>
+
+        </div>
+        <!-- End Sidebar -->
+
+        <div class="clearfix"></div>
+
+    </div>
+    <!-- Sidebar -left -->
+
+</div>
+<!-- Left Sidebar End -->
+
+<!-- ============================================================== -->
+<!-- Start Page Content here -->
+<!-- ============================================================== -->
+

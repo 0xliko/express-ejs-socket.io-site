@@ -1,0 +1,50 @@
+
+.category-item {
+    margin-bottom: 10px;
+}
+
+.category-item:last-child {
+    margin-bottom: 0;
+}
+
+.main-chart {
+    height: 400px;
+}
+
+.text-red {
+    color: #ff2f00;
+}
+
+.text-green {
+    color: #0eca0e;
+}
+
+.main-item,
+.category-list {
+    height: 100%;
+    border: 1px solid #aaa;
+    position: relative;
+}
+
+.category-chart {
+    height: 400px;
+}
+
+.attendant-info {
+    position: absolute;
+    top: 180px;
+    left: calc(50% - 65px);
+}
+.list-inline-item{
+    display: inherit;
+    position: relative;
+}
+.list-inline-item:nth-child(2){
+    margin-left: -23px;
+}
+.list-inline-item h6{
+    font-size: 30px;
+}
+.list-inline-item h6 strong{
+    font-size: 45px;
+}

@@ -1,0 +1,52 @@
+<% layout('../../layout/app') -%>
+<% include ../../components/table-style -%>
+<% include ../../components/table-script -%>
+<% script(baseURL+"assets/libs/custombox/custombox.min.js") %>
+<% script(baseURL+"pages/js/admin.js") %>
+
+<div class="row">
+    <div class="col-12">
+        <div class="card mt-lg-5">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-12 mb-2">
+                        <a href="#edit-modal" class="btn btn-outline-primary btn-add waves-effect waves-light">مشرف جديد</a>
+                    </div>
+                </div>
+                <table class="table table-bordered table-striped" id="data_table">
+                    <thead>
+                    <tr>
+                        <th>رقم</th>
+                        <th>اسم</th>
+                        <th>البريد الالكتروني</th>
+                        <th>المستوى</th>
+                        <th>عدد ورقة</th>
+                        <th>"الفعل</th>
+                    </tr>
+                    </thead>
+                    <tbody class="data_list">
+                    <% admins.forEach((admin, index)=>{ %>
+                        <tr row_id="<%= admin._id %>" >
+                            <td><%= index + 1 %></td>
+                            <td><%= admin.name %></td>
+                            <td><%= admin.email %></td>
+                            <td><%= admin.level == 0 ? "مشرف رئيسي" : "مشرف عام" %></td>
+                            <td><%= admin.level == 0 ? "" : admin.sheet_num %></td>
+                            <td>
+                                <button type="button" class="btn btn-sm btn-outline-success waves-effect waves-light btn-edit">تغير</button>
+                                <% if(admin.level > 0 ) {%>
+                                <button type="button" class="btn btn-sm btn-outline-danger waves-effect waves-light btn-remove">خذف</button>
+                                <% } %>
+                            </td>
+                        </trow>
+                    <% }) %>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<% include ./admin-edit %>

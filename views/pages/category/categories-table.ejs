@@ -1,0 +1,60 @@
+<table class="table table-bordered table-striped" id="data_table">
+
+    <thead>
+    <tr>
+        <th>اسم</th>
+        <th width="200px">الفعل</th>
+    </tr>
+
+    </thead>
+    <tbody class="data_list">
+    <% for(let i = 0 ; i < categories.length ; i++ ){
+        var category = categories[i]; %>
+    <tr row_id="<%= category._id %>">
+        <td><%= category.name %></td>
+        <td>
+            <button type="button" class="btn btn-sm btn-outline-success waves-effect waves-light btn-edit">تغير</button>
+            <button type="button" class="btn btn-sm btn-outline-danger waves-effect waves-light btn-remove">خذف</button>
+        </td>
+    </tr>
+    <% } %>
+    </tbody>
+    <tfoot>
+
+    </tfoot>
+
+</table>
+<script>
+    var dataTable;
+    $(document).ready(function () {
+        dataTable = $("#data_table").DataTable({
+            keys: !0,
+            oLanguage:
+                {
+                    "sEmptyTable": "ليست هناك بيانات متاحة في الجدول",
+                    "sLoadingRecords": "جارٍ التحميل...",
+                    "sProcessing": "جارٍ التحميل...",
+                    "sLengthMenu": "أظهر _MENU_ مدخلات",
+                    "sZeroRecords": "لم يعثر على أية سجلات",
+                    "sInfo": "إظهار _START_ إلى _END_ من أصل _TOTAL_ مدخل",
+                    "sInfoEmpty": "يعرض 0 إلى 0 من أصل 0 سجل",
+                    "sInfoFiltered": "(منتقاة من مجموع _MAX_ مُدخل)",
+                    "sInfoPostFix": "",
+                    "sSearch": "ابحث:",
+                    "sUrl": "",
+                    "oPaginate": {
+                        "sFirst": "الأول",
+                        "sPrevious": "السابق",
+                        "sNext": "التالي",
+                        "sLast": "الأخير"
+                    },
+                    "oAria": {
+                        "sSortAscending": ": تفعيل لترتيب العمود تصاعدياً",
+                        "sSortDescending": ": تفعيل لترتيب العمود تنازلياً"
+                    }
+                }
+        });
+
+
+    });
+</script>
